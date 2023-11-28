@@ -1,0 +1,13 @@
+.note > svg{
+    display: none;
+}
+.note:hover > svg{
+    display: block;
+}
+
+.note > select{
+    display: none;
+}
+.note:hover > select{
+    display: block;
+}
