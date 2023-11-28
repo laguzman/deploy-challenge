@@ -7,13 +7,14 @@ generator client {
 
 datasource db {
   provider = "sqlite"
-  url      = env("DATABASE_URL")
+  url      = "file:./dev.db"
 }
+
 model Notes {
-  id   String  @id  @default(cuid())
-  body  String
-  tag   String
-  archived Boolean
+  id        String    @id @default(cuid())
+  body      String
+  tag       String
+  archived  Boolean
   createdAt DateTime? @default(now())
   updatedAt DateTime? @updatedAt
 }
