@@ -70,7 +70,7 @@ export default function Home() {
     }
 
     function deleteNote(event,id){
-        fetch(`http://localhost:3000/api/notes/${id}`, {method: 'DELETE'})
+        fetch(`/api/notes/${id}`, {method: 'DELETE'})
             .then(setNotes(oldNotes => oldNotes.filter(oldNote => oldNote.id !== id)))
 
     }
@@ -141,7 +141,7 @@ export default function Home() {
     }, [tempNoteText])
 
     React.useEffect(() => {
-        fetch('http://localhost:3000/api/notes', {cache: 'no-store'})
+        fetch('/api/notes', {cache: 'no-store'})
             .then((res) => res.json())
             .then((dat) => {
                 setNotes(dat)
